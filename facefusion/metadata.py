@@ -1,17 +1,13 @@
-from typing import Optional
-
 METADATA =\
 {
 	'name': 'FaceFusion',
-	'description': 'Industry leading face manipulation platform',
-	'version': '3.0.0',
+	'description': 'Next generation face swapper and enhancer',
+	'version': '2.6.1',
 	'license': 'MIT',
 	'author': 'Henry Ruhs',
 	'url': 'https://facefusion.io'
 }
 
 
-def get(key : str) -> Optional[str]:
-	if key in METADATA:
-		return METADATA.get(key)
-	return None
+def get(key : str) -> str:
+	return METADATA[key]

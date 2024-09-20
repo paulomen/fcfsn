@@ -1,7 +1,7 @@
 from configparser import ConfigParser
-from typing import Any, List, Optional
+from typing import Any, Optional, List
 
-from facefusion import state_manager
+import facefusion.globals
 
 CONFIG = None
 
@@ -11,7 +11,7 @@ def get_config() -> ConfigParser:
 
 	if CONFIG is None:
 		CONFIG = ConfigParser()
-		CONFIG.read(state_manager.get_item('config_path'), encoding = 'utf-8')
+		CONFIG.read(facefusion.globals.config_path, encoding = 'utf-8')
 	return CONFIG
 
 
