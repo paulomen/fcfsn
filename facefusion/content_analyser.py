@@ -16,7 +16,8 @@ from facefusion.filesystem import resolve_relative_path, is_file
 from facefusion.download import conditional_download
 
 CONTENT_ANALYSER = None
-MODELS : ModelSet =\
+THREAD_LOCK : threading.Lock = threading.Lock()
+MODELS : Dict[str, ModelValue] =\
 {
 	'open_nsfw':
 	{
